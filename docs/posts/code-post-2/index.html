@@ -193,7 +193,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>This is a post with executable code.</p>
-<p>The data is from <a href="https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance/data" class="uri">https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance/data</a></p>
+<p>The data is from <a href="https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance/data" class="uri">https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance/dat</a>a</p>
+<p>The code demonstrates that health insurance expenditures increase as age increases. This is true for smokers and non smokers. Each additional year of age increases the health expenditure.</p>
+<p>However, the difference between smoking and non smoking is pronounced. While the scatterplot shows that some individual smokers have lower healthcare costs than some individual nonsmokers, overall the average expenditure is much, much higher for smokers. It is so much higher that the average 20 year old smoker has more healthcare expenditure than the average 60 year old nonsmoker.</p>
+<p>This dataset illustrates the massive negative impacts of smoking on health via the monetary impact of health insurance spending.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load in the data</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/insurance 2.csv"</span>)</span>
@@ -227,7 +230,7 @@ Attaching package: 'dplyr'</code></pre>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># scatterplot by age and healthcare expenditure</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># two linear regression lines by smoking status</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> charges, <span class="at">color =</span> smoker)) <span class="sc">+</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Regression of Charges vs. Age by Smoking Status"</span>,</span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Age"</span>,</span>

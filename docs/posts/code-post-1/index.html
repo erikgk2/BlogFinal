@@ -195,6 +195,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>This is a post with executable code.</p>
 <p>The data is from <a href="https://www.kaggle.com/datasets/valakhorasani/gym-members-exercise-dataset/data" class="uri">https://www.kaggle.com/datasets/valakhorasani/gym-members-exercise-dataset/data</a></p>
+<p>The dataset shows that individuals that do Cardio and Yoga have slightly lower resting heart rates compared to those that do HIIT and Strength training. This could be due to the calming effects of Yoga, and the aerobic conditioning effects of cardio.</p>
+<p>The maximum heart rate achieved was lowest for strength, followed by cardio, then HIIT, with the highest being for Yoga. This surprised me, since I would’ve assumed that cardio and HIIT would have the highest maximum heart rate. It is possible that yoga involves a small burst of activity that raises the heart rate to a higher maximum compared to cardio which may be more consistent, or that people choosing to do Yoga have different underlying characteristics.</p>
+<p>However, the overall differences between groups were small.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/gym_data.csv"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

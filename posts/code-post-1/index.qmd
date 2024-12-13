@@ -10,6 +10,12 @@ This is a post with executable code.
 
 The data is from <https://www.kaggle.com/datasets/valakhorasani/gym-members-exercise-dataset/data>
 
+The dataset shows that individuals that do Cardio and Yoga have slightly lower resting heart rates compared to those that do HIIT and Strength training. This could be due to the calming effects of Yoga, and the aerobic conditioning effects of cardio.
+
+The maximum heart rate achieved was lowest for strength, followed by cardio, then HIIT, with the highest being for Yoga. This surprised me, since I would've assumed that cardio and HIIT would have the highest maximum heart rate. It is possible that yoga involves a small burst of activity that raises the heart rate to a higher maximum compared to cardio which may be more consistent, or that people choosing to do Yoga have different underlying characteristics.
+
+However, the overall differences between groups were small.
+
 ```{r}
 data <- read.csv("data/gym_data.csv")
 head(data)

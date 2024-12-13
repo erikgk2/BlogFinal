@@ -8,7 +8,13 @@ image: "image.jpg"
 
 This is a post with executable code.
 
-The data is from <https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance/data>
+The data is from [https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance/dat](https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance/data){.uri}a
+
+The code demonstrates that health insurance expenditures increase as age increases. This is true for smokers and non smokers. Each additional year of age increases the health expenditure.
+
+However, the difference between smoking and non smoking is pronounced. While the scatterplot shows that some individual smokers have lower healthcare costs than some individual nonsmokers, overall the average expenditure is much, much higher for smokers. It is so much higher that the average 20 year old smoker has more healthcare expenditure than the average 60 year old nonsmoker.
+
+This dataset illustrates the massive negative impacts of smoking on health via the monetary impact of health insurance spending.
 
 ```{r}
 
@@ -23,7 +29,7 @@ library(ggplot2)
 # scatterplot by age and healthcare expenditure
 # two linear regression lines by smoking status
 ggplot(data, aes(x = age, y = charges, color = smoker)) +
-  geom_point(alpha = 0.6) +
+  geom_point(alpha = 0.3) +
   geom_smooth(method = "lm", se = FALSE) +
   labs(title = "Regression of Charges vs. Age by Smoking Status",
        x = "Age",
