@@ -1,0 +1,43 @@
+---
+title: "Heart Rate and Workout Type"
+author: "Erik Kruse"
+date: "2024-12-12"
+categories: [health, heart rate, workout, gym, code, analysis]
+image: "image.jpg"
+---
+
+This is a post with executable code.
+
+The data is from <https://www.kaggle.com/datasets/valakhorasani/gym-members-exercise-dataset/data>
+
+```{r}
+data <- read.csv("data/gym_data.csv")
+head(data)
+
+library(dplyr)
+
+# average resting heart rate by workout type
+summary <- data %>%
+  group_by(Workout_Type) %>%
+  summarize(Resting_BPM = mean(Resting_BPM, na.rm = TRUE))
+
+print(summary)
+
+# max heart rate by workout type
+summary <- data %>%
+  group_by(Workout_Type) %>%
+  summarize(Max_BPM = mean(Max_BPM, na.rm = TRUE))
+
+print(summary)
+
+library(ggplot2)
+
+#box plots of maximum bpm by working type
+ggplot(data, aes(x = Workout_Type, y = Max_BPM, fill = Workout_Type)) +
+  geom_boxplot(alpha = 0.7) +
+  labs(title = "Box Plot of Max_BPM by Workout_Type", 
+       x = "Exercise Type", 
+       y = "Max BPM") +
+  theme_minimal()
+
+```

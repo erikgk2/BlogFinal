@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Hello!\nI am a student in UIUC’s MSLIS program. I currently work in a public library but hope to work in an academic library after I graduate. I am interested in data focused librarianship paths, such as eventually becoming a GIS Librarian or fulfilling a similar role.\nIn my free time, I enjoy spending time with my two dogs, as well as bouldering. When it’s nice out, I like to do a little bit of gardening, but these days I’m not doing much of that!"
+  },
+  {
+    "objectID": "AboutMe.html",
+    "href": "AboutMe.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Hello!\nI am a student in UIUC’s MSLIS program. I currently work in a public library but hope to work in an academic library after I graduate. I am interested in data focused librarianship paths, such as eventually becoming a GIS Librarian or fulfilling a similar role.\nIn my free time, I enjoy spending time with my two dogs, as well as bouldering. When it’s nice out, I like to do a little bit of gardening, but these days I’m not doing much of that!"
+  },
+  {
+    "objectID": "posts/about-me/index.html",
+    "href": "posts/about-me/index.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Hello!\nI am a student in UIUC’s MSLIS program. I currently work in a public library but hope to work in an academic library after I graduate. I am interested in data focused librarianship paths, such as eventually becoming a GIS Librarian or fulfilling a similar role.\nIn my free time, I enjoy spending time with my two dogs, as well as bouldering. When it’s nice out, I like to do a little bit of gardening, but these days I’m not doing much of that!"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts/code-post-2/index.html",
+    "href": "posts/code-post-2/index.html",
+    "title": "Healthcare Insurance Expenditure by Age and Smoking Status",
+    "section": "",
+    "text": "This is a post with executable code.\nThe data is from https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance/data\n\n# load in the data\ndata &lt;- read.csv(\"data/insurance 2.csv\")\nhead(data)\n\n  age    sex    bmi children smoker    region   charges\n1  19 female 27.900        0    yes southwest 16884.924\n2  18   male 33.770        1     no southeast  1725.552\n3  28   male 33.000        3     no southeast  4449.462\n4  33   male 22.705        0     no northwest 21984.471\n5  32   male 28.880        0     no northwest  3866.855\n6  31 female 25.740        0     no southeast  3756.622\n\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(ggplot2)\n\n# scatterplot by age and healthcare expenditure\n# two linear regression lines by smoking status\nggplot(data, aes(x = age, y = charges, color = smoker)) +\n  geom_point(alpha = 0.6) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(title = \"Regression of Charges vs. Age by Smoking Status\",\n       x = \"Age\",\n       y = \"Charges\",\n       color = \"Smoker\") +\n  theme_minimal()\n\n`geom_smooth()` using formula = 'y ~ x'"
+  },
+  {
+    "objectID": "posts/code-post-1/index.html",
+    "href": "posts/code-post-1/index.html",
+    "title": "Heart Rate and Workout Type",
+    "section": "",
+    "text": "This is a post with executable code.\nThe data is from https://www.kaggle.com/datasets/valakhorasani/gym-members-exercise-dataset/data\n\ndata &lt;- read.csv(\"data/gym_data.csv\")\nhead(data)\n\n  Age Gender Weight..kg. Height..m. Max_BPM Avg_BPM Resting_BPM\n1  56   Male        88.3       1.71     180     157          60\n2  46 Female        74.9       1.53     179     151          66\n3  32 Female        68.1       1.66     167     122          54\n4  25   Male        53.2       1.70     190     164          56\n5  38   Male        46.1       1.79     188     158          68\n6  56 Female        58.0       1.68     168     156          74\n  Session_Duration..hours. Calories_Burned Workout_Type Fat_Percentage\n1                     1.69            1313         Yoga           12.6\n2                     1.30             883         HIIT           33.9\n3                     1.11             677       Cardio           33.4\n4                     0.59             532     Strength           28.8\n5                     0.64             556     Strength           29.2\n6                     1.59            1116         HIIT           15.5\n  Water_Intake..liters. Workout_Frequency..days.week. Experience_Level   BMI\n1                   3.5                             4                3 30.20\n2                   2.1                             4                2 32.00\n3                   2.3                             4                2 24.71\n4                   2.1                             3                1 18.41\n5                   2.8                             3                1 14.39\n6                   2.7                             5                3 20.55\n\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n# average resting heart rate by workout type\nsummary &lt;- data %&gt;%\n  group_by(Workout_Type) %&gt;%\n  summarize(Resting_BPM = mean(Resting_BPM, na.rm = TRUE))\n\nprint(summary)\n\n# A tibble: 4 × 2\n  Workout_Type Resting_BPM\n  &lt;chr&gt;              &lt;dbl&gt;\n1 Cardio              62.0\n2 HIIT                62.7\n3 Strength            62.5\n4 Yoga                61.8\n\n# max heart rate by workout type\nsummary &lt;- data %&gt;%\n  group_by(Workout_Type) %&gt;%\n  summarize(Max_BPM = mean(Max_BPM, na.rm = TRUE))\n\nprint(summary)\n\n# A tibble: 4 × 2\n  Workout_Type Max_BPM\n  &lt;chr&gt;          &lt;dbl&gt;\n1 Cardio          180.\n2 HIIT            180.\n3 Strength        179.\n4 Yoga            181.\n\nlibrary(ggplot2)\n\n#box plots of maximum bpm by working type\nggplot(data, aes(x = Workout_Type, y = Max_BPM, fill = Workout_Type)) +\n  geom_boxplot(alpha = 0.7) +\n  labs(title = \"Box Plot of Max_BPM by Workout_Type\", \n       x = \"Exercise Type\", \n       y = \"Max BPM\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "KruseFinalBlog",
+    "section": "",
+    "text": "Healthcare Insurance Expenditure by Age and Smoking Status\n\n\n\n\n\n\nhealth\n\n\ninsurance\n\n\nsmoking\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nDec 12, 2024\n\n\nErik Kruse\n\n\n\n\n\n\n\n\n\n\n\n\nHeart Rate and Workout Type\n\n\n\n\n\n\nhealth\n\n\nheart rate\n\n\nworkout\n\n\ngym\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nDec 12, 2024\n\n\nErik Kruse\n\n\n\n\n\n\n\n\n\n\n\n\nAbout Me\n\n\n\n\n\n\nintro\n\n\n\n\n\n\n\n\n\nDec 9, 2024\n\n\nErik Kruse\n\n\n\n\n\n\nNo matching items"
+  }
+]

@@ -1,0 +1,14 @@
+---
+title: "About Me"
+author: "Erik Kruse"
+date: "2024-12-09"
+categories: [intro]
+---
+
+Hello!
+
+I am a student in UIUC's MSLIS program. I currently work in a public library but hope to work in an academic library after I graduate. I am interested in data focused librarianship paths, such as eventually becoming a GIS Librarian or fulfilling a similar role.
+
+In my free time, I enjoy spending time with my two dogs, as well as bouldering. When it's nice out, I like to do a little bit of gardening, but these days I'm not doing much of that!
+
+![](images/clipboard-4234018350.png)

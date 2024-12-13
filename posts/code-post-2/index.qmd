@@ -1,0 +1,34 @@
+---
+title: "Healthcare Insurance Expenditure by Age and Smoking Status"
+author: "Erik Kruse"
+date: "2024-12-12"
+categories: [health, insurance, smoking, code, analysis]
+image: "image.jpg"
+---
+
+This is a post with executable code.
+
+The data is from <https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance/data>
+
+```{r}
+
+# load in the data
+data <- read.csv("data/insurance 2.csv")
+head(data)
+
+
+library(dplyr)
+library(ggplot2)
+
+# scatterplot by age and healthcare expenditure
+# two linear regression lines by smoking status
+ggplot(data, aes(x = age, y = charges, color = smoker)) +
+  geom_point(alpha = 0.6) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "Regression of Charges vs. Age by Smoking Status",
+       x = "Age",
+       y = "Charges",
+       color = "Smoker") +
+  theme_minimal()
+
+```
